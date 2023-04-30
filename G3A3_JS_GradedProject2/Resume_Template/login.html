@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <link rel="stylesheet" href="./css/login.css" />
+	<title>Login Page</title>
+</head>
+
+<body>
+	<h1>Login Page</h1>
+	<form onsubmit="return login()">
+		<label for="username"></label>
+		<input type="text" placeholder="Username" id="username" required><br><br>
+		<label for="password"></label>
+		<input type="password" placeholder="Password" id="password" required><br><br>
+		<input type="submit" value="Login">
+	</form>
+
+	<script> 
+		// Function to validate login credentials and store in local storage
+		function login() {
+			const username = document.getElementById("username").value;
+			const password = document.getElementById("password").value;
+			if (username === "admin" && password === "password" || username === "chetan" && password === "chetan") {
+				localStorage.setItem("loggedIn", true);
+				window.location.href = "resume-page.html";
+				return false;
+			} else {
+				alert("Invalid username/password");
+				return false;
+			}
+			
+		}
+	</script>
+</body>
+</html>
+
+
+
+
+
